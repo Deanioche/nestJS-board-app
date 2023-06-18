@@ -16,7 +16,7 @@ import { BoardsService } from './boards.service';
 import { CreateBoardDto } from './dto/create-board.dto';
 import { Board } from './board.entity';
 import { DeleteResult } from 'typeorm';
-import { BoardStatusValidationPipe } from './pipes/boardStatusValidationPipe';
+import { BoardStatusValidationPipe } from './boardStatusValidationPipe';
 import { BoardStatus } from './board-status.enum';
 import { AuthGuard } from '@nestjs/passport';
 import { GetUser } from 'src/auth/get-user.decorator';
