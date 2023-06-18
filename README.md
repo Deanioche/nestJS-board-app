@@ -1,8 +1,25 @@
-# nestJS Board app (WIP)
+# nestJS Board app
 
 > [따라하며 배우는 nestJS](https://inf.run/kB1y)
 
 - `@nestjs/typeorm`, `typeorm` 최신 버전에 작동하도록 Repository 수정.
+- board repository delete 부분 수정.
+  ```js
+  // 방법 1
+  const result = await this.boardRepository.delete({
+    id,
+    user: { id: user.id },
+  });
+
+  // 방법 2
+  const result = await this.boardRepository
+    .createQueryBuilder('board')
+    .delete()
+    .from(Board)
+    .where('userId = :userId', { userId: user.id })
+    .andWhere('id = :id', { id })
+    .execute();
+  ```
 
 ## Structure
 ```

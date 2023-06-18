@@ -1,0 +1,8 @@
+db:
+  host: 'localhost'
+  username: 'root'
+  password: 'root'
+  synchronize: true # 서버 실행시 entity를 읽어 테이블을 새로 구성
+
+jwt:
+  secret: 'dohyulee'
